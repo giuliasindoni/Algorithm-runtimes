@@ -58,13 +58,13 @@ for i in [5,10, 50, 100, 500, 1000]:
 	attempt_avarage_i = sum(attempt) / len(attempt)
 	list_of_avarages.append(attempt_avarage_i)
 
-print(list_of_avarages)
+#print(list_of_avarages)
 
 #simple check
 
 	
-if all(list_of_avarages[i] < list_of_avarages[i+1] for i in range(len(list_of_avarages)-1)):
-	print("TRUE")
+#if all(list_of_avarages[i] < list_of_avarages[i+1] for i in range(len(list_of_avarages)-1)):
+#	print("TRUE")
 
 
 size = [5,10, 50, 100, 500, 1000]
