@@ -40,7 +40,7 @@ ex1 = [4, 9, 3, -2, 9, 10, -5, 8, 4]
 
 
 
-print(quick_sort_2(ex1))
+print(quick_sort(ex1))
 
 
 
