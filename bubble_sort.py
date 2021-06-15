@@ -42,16 +42,16 @@ def create_n_random_arrays(n, mysize):
 list_of_avarages = []
 
 for i in [5,10, 50, 100, 500, 1000]:
-	lenght_5 = create_n_random_arrays(10, i)
+	lenght_i = create_n_random_arrays(10, i)
 	attempt = []
-	for array in lenght_5:
+	for array in lenght_i:
 		start_time = time.time()
 		my_bubble_sort(array)
 		end_time = time.time()
 		time_taken = end_time - start_time
 		attempt.append(time_taken)
-	attempt_avarage_5 = sum(attempt) / len(attempt)
-	list_of_avarages.append(attempt_avarage_5)
+	attempt_avarage_i = sum(attempt) / len(attempt)
+	list_of_avarages.append(attempt_avarage_i)
 
 print(list_of_avarages)
 
@@ -60,6 +60,9 @@ print(list_of_avarages)
 	
 if all(list_of_avarages[i] < list_of_avarages[i+1] for i in range(len(list_of_avarages)-1)):
 	print("TRUE")
+
+
+
 
 # run my_bubble sort on n = 10 arrays of size 10
 #for each of the 10 arrays measure the time taken
