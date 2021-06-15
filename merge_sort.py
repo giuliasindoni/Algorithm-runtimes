@@ -77,3 +77,15 @@ plt.ylabel('Avarage')
 plt.show()
 
 
+
+#size = [5,10, 50, 100, 500, 1000, 5000]
+
+
+#plt.plot(size, list_of_avarages_bubble , 'b-', label='bubble sort')
+#plt.plot(size, list_of_avarages_merge, 'r-', label='merge sort')
+
+#plt.xlabel('Size')
+#plt.ylabel('Avarage')
+#plt.show()
+
+
