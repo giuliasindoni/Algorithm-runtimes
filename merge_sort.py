@@ -1,3 +1,7 @@
+import numpy
+import time
+import matplotlib.pyplot as plt
+
 def merge_sort_2(myarray):
 	if len(myarray) > 1:
 		#Diving the array elements in two halfs
@@ -33,12 +37,43 @@ def merge_sort_2(myarray):
 		return(myarray)
 
 
-x = [3, 45, 1, -9, 10, 8]
-print(merge_sort_2(x))
+def create_n_random_arrays(n, mysize):
+	list_of_arrays = []
+	for i in range(n):
+		created_array = numpy.random.randint(-200, 200, size=mysize, dtype=int)
+		list_of_arrays.append(created_array)
+	return list_of_arrays
 
-y = [3, 5, -1, 90, -89, 30, 59, 2, 4, 3]
+list_of_avarages = []
 
-print(merge_sort_2(y))
-		
+for i in [5,10, 50, 100, 500, 1000]:
+	lenght_i = create_n_random_arrays(10, i)
+	attempt = []
+	for array in lenght_i:
+		start_time = time.time()
+		merge_sort_2(array)
+		end_time = time.time()
+		time_taken = end_time - start_time
+		attempt.append(time_taken)
+	attempt_avarage_i = sum(attempt) / len(attempt)
+	list_of_avarages.append(attempt_avarage_i)
+
+print(list_of_avarages)
+
+#simple check
+
+	
+if all(list_of_avarages[i] < list_of_avarages[i+1] for i in range(len(list_of_avarages)-1)):
+	print("TRUE")
+
+
+size = [5,10, 50, 100, 500, 1000]
+
+avarage = list_of_avarages
+
+plt.plot(size, avarage)
+plt.xlabel('Size')
+plt.ylabel('Avarage')
+plt.show()
 
 
