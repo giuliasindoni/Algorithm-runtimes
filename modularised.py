@@ -36,7 +36,7 @@ def create_n_random_arrays(n, mysize):
 #-------- We always create n = 10 arrays of each size, but this parameter could be changed.
 
 def collect_data(algorithm, array_of_sizes):
-	list_of_average_algorithm = []
+	list_of_averages_algorithm = []
 	for size in array_of_sizes:
 		lenght_size = create_n_random_arrays(10, size)
 		attempt = []
@@ -47,20 +47,20 @@ def collect_data(algorithm, array_of_sizes):
 			time_taken = end_time - start_time
 			attempt.append(time_taken)
 		attempt_average_size = sum(attempt) / len(attempt)
-		list_of_average_algorithm.append(attempt_average_size)
-	return list_of_average_algorithm
+		list_of_averages_algorithm.append(attempt_average_size)
+	return list_of_averages_algorithm
 
 #-------- Some tests to collect on merge_sort, quick_sort ... with arrays of sizes 5, 10, 50, 100, ..., 5000
 
 sizes = [5,10, 50, 100, 500, 1000, 5000]
 
 
-#list_of_average_merge = collect_data(merge_sort, sizes)
+list_of_averages_merge = collect_data(merge_sort, sizes)
 
 #print(list_of_average_merge)
 
 
-#list_of_average_quick = collect_data(quick_sort, sizes)
+list_of_averages_quick = collect_data(quick_sort, sizes)
 
 #print(list_of_average_quick)
 
@@ -75,12 +75,27 @@ sizes = [5,10, 50, 100, 500, 1000, 5000]
 #print(list_of_average_insertion)
 
 
-list_of_average_selection = collect_data(selection_sort, sizes)
+#list_of_average_selection = collect_data(selection_sort, sizes)
 
-print(list_of_average_selection)
+#print(list_of_average_selection)
 
 
-#---------- Plotting the data 
+#---------- Plotting the data and save img as png file
+
+
+
+plt.xscale('log')
+plt.yscale('log')
+#plt.plot(size, list_of_avarages_bubble , 'b-', label='bubble sort')
+plt.plot(sizes, list_of_averages_merge, 'r-', label='merge sort')
+plt.plot(sizes, list_of_averages_quick, 'y-', label='quick sort')
+
+
+plt.xlabel('Size')
+plt.ylabel('Average')
+#plt.savefig('merge-quick')
+
+plt.savefig('merge-quick')
 
 
 
