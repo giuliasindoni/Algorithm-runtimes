@@ -30,6 +30,7 @@ def create_n_random_arrays(n, mysize):
 #-------- Function to collect average running times of algorithms on arrays of sizes 5, 10, 50, 100... 
 #-------- Argument "algorithm" specify which algorithm we want to collect the data for
 #-------- Argument array_of_sizes is an array collecting the sizes we want the arrays argument of the algorithm to be
+#-------- We always create n = 10 arrays of each size, but this parameter could be changed.
 
 def collect_data(algorithm, array_of_sizes):
 	list_of_average_algorithm = []
