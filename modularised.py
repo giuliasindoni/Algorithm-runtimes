@@ -91,11 +91,27 @@ plt.plot(sizes, list_of_averages_merge, 'r-', label='merge sort')
 plt.plot(sizes, list_of_averages_quick, 'y-', label='quick sort')
 
 
+#--------__Plotting some functions to appreciate the bounds of the algorithms curves
+
+
+x = range(5,5000)
+y = [(1/10**6)*i*math.log(i,2) for i in x]
+t = [(1/10**6)*i**2 for i in x]
+k =  [ (1/10**6)* i for i in x]
+
+
+
+plt.plot(x, y, '-g')
+#plt.plot(x, k)
+
+#plt.plot(x, t)
+
+
 plt.xlabel('Size')
 plt.ylabel('Average')
 #plt.savefig('merge-quick')
 
-plt.savefig('merge-quick')
+plt.savefig('merge-quick-nlogn')
 
 
 
