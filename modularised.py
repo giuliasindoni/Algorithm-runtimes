@@ -1,6 +1,7 @@
 import numpy
 import time
 import matplotlib.pyplot as plt
+import math 
 
 
 from bubble_sort import my_bubble_sort
@@ -12,6 +13,8 @@ from selection_sort import selection_sort
 from merge_sort import merge_sort
 
 from quick_sort import quick_sort
+
+
 
 
 #------- Function to create a certain number n of arrays of size my size. 
@@ -75,6 +78,9 @@ sizes = [5,10, 50, 100, 500, 1000, 5000]
 list_of_average_selection = collect_data(selection_sort, sizes)
 
 print(list_of_average_selection)
+
+
+#---------- Plotting the data 
 
 
 
