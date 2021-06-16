@@ -54,7 +54,7 @@ def collect_data(algorithm, array_of_sizes):
 
 #-------- Some tests to collect on merge_sort, quick_sort ... with arrays of sizes 5, 10, 50, 100, ..., 5000
 
-sizes = [5,10, 50, 100, 500, 1000, 5000]
+sizes = [5,10, 50, 100, 500, 1000, 5000, 10000, 500000]
 
 
 list_of_averages_merge = collect_data(merge_sort, sizes)
@@ -62,7 +62,7 @@ list_of_averages_merge = collect_data(merge_sort, sizes)
 #print(list_of_average_merge)
 
 
-list_of_averages_quick = collect_data(quick_sort, sizes)
+#list_of_averages_quick = collect_data(quick_sort, sizes)
 
 #print(list_of_average_quick)
 
@@ -89,31 +89,35 @@ list_of_averages_quick = collect_data(quick_sort, sizes)
 plt.xscale('log')
 plt.yscale('log')
 #plt.plot(size, list_of_avarages_bubble , 'b-', label='bubble sort')
-plt.plot(sizes, list_of_averages_merge, 'r-', label='merge sort')
-plt.plot(sizes, list_of_averages_quick, 'y-', label='quick sort')
+plt.plot(sizes, list_of_averages_merge, 'r-', label = 'merge sort')
+#plt.plot(sizes, list_of_averages_quick, 'y-', label='quick sort')
 
 
 #--------__Plotting some functions to appreciate the bounds of the algorithms curves
 
-
-x = range(5,5000)
+x = range(5,500000)
 y = [(1/10**6)*i*math.log(i,2) for i in x]
 t = [(1/10**6)*i**2 for i in x]
-k =  [ (1/10**6)* i for i in x]
-
-
-
-plt.plot(x, y, '-g')
-#plt.plot(x, k)
-
+k =  [ (1/10**5)* i for i in x]
+plt.plot(x, y, 'g--', label = 'n*logn')
+plt.plot(x, k, 'b--', label = 'n')
 #plt.plot(x, t)
 
 
-plt.xlabel('Size')
-plt.ylabel('Average')
+#------Create legend
+
+plt.legend(loc='upper left')
+plt.xlabel('Size of array')
+plt.ylabel('Average (seconds)')
+plt.legend()
+
+
+
+#------- Saving image
+
 #plt.savefig('merge-quick')
 
-plt.savefig('merge-quick-nlogn')
+plt.savefig('merge-n-nlogn')
 
 
 
