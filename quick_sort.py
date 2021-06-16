@@ -23,6 +23,7 @@ ex1 = [4, 9, 3, -2, 9, 10, -5, 8, 4]
 
 
 
+
 # def quick_sort_2(array):
 # 	if len(array) <= 1:
 # 		return array
