@@ -16,24 +16,24 @@ def my_bubble_sort(mylist):
 
 
 
-example = [-14, 7, 8, 6, -2, -1, -100]
+# example = [-14, 7, 8, 6, -2, -1, -100]
 
-example2 = [67, 0, -1, 90, 89, 5, 9, 7, 7]
+# example2 = [67, 0, -1, 90, 89, 5, 9, 7, 7]
 
-example3 = [0, 0, 90, 8, -2, 56]
+# example3 = [0, 0, 90, 8, -2, 56]
 
 #print(my_bubble_sort(example3))
 
 
 # function to create n random arrays of size mysize
 
-# def create_n_random_arrays(n, mysize):
-# 	list_of_arrays = []
-# 	for i in range(n):
-# 		created_array = numpy.random.randint(-200, 200, size=mysize, dtype=int)
-# 		list_of_arrays.append(created_array)
-# 	return list_of_arrays
-# #print(create_n_random_arrays(5, 2))
+ # def create_n_random_arrays(n, mysize):
+ # 	list_of_arrays = []
+ # 	for i in range(n):
+ # 		created_array = numpy.random.randint(-200, 200, size=mysize, dtype=int)
+ # 		list_of_arrays.append(created_array)
+ # 	return list_of_arrays
+ #print(create_n_random_arrays(5, 2))
 
 
 # # run my_bubble sort on n = 10 arrays of size 5 
