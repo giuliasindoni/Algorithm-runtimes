@@ -99,8 +99,8 @@ x = range(5,500000)
 y = [(1/10**6)*i*math.log(i,2) for i in x]
 t = [(1/10**6)*i**2 for i in x]
 k =  [ (1/10**5)* i for i in x]
-plt.plot(x, y, 'g--', label = 'n*logn')
-plt.plot(x, k, 'b--', label = 'n')
+plt.plot(x, y, 'g--', label = 'O(n*logn)')
+plt.plot(x, k, 'b--', label = 'O(n)')
 #plt.plot(x, t)
 
 
