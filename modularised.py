@@ -46,7 +46,7 @@ def collect_data(algorithm, array_of_sizes):
 		list_of_average_algorithm.append(attempt_average_size)
 	return list_of_average_algorithm
 
-#-------- Some test run of collect_data function on merge_sort, quick_sort ... with arrays of sizes 5, q0, ... 5000
+#-------- Some tests to collect on merge_sort, quick_sort ... with arrays of sizes 5, 10, 50, 100, ..., 5000
 
 sizes = [5,10, 50, 100, 500, 1000, 5000]
 
