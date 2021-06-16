@@ -2,7 +2,7 @@ import numpy
 import time
 import matplotlib.pyplot as plt
 
-def merge_sort_2(myarray):
+def merge_sort(myarray):
 	if len(myarray) > 1:
 		#Diving the array elements in two halfs
 		S1 = myarray[:len(myarray)//2]
@@ -10,8 +10,8 @@ def merge_sort_2(myarray):
 
 		#sorting the two halves
 
-		merge_sort_2(S1)
-		merge_sort_2(S2)
+		merge_sort(S1)
+		merge_sort(S2)
 
 	#array = ['x' for m in range( (len(S1) + len(S2)) )]
 		i = j = k = 0
