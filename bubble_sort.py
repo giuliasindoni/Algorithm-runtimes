@@ -13,6 +13,10 @@ def my_bubble_sort(mylist):
 				mylist[j+1] = tmp
 	return(mylist)
 	
+x = [0, 28, 1]
+
+if __name__ == "__main__":
+	print(my_bubble_sort(x))
 
 
 
@@ -26,14 +30,14 @@ def my_bubble_sort(mylist):
 
 
 # function to create n random arrays of size mysize
+# def create_n_random_arrays_x(n, mysize):
+# 	list_of_arrays = []
+# 	for i in range(n):
+# 		created_array = numpy.random.randint(-200, 200, size=mysize, dtype=int)
+# 		list_of_arrays.append(created_array)
+# 	return list_of_arrays
 
- # def create_n_random_arrays(n, mysize):
- # 	list_of_arrays = []
- # 	for i in range(n):
- # 		created_array = numpy.random.randint(-200, 200, size=mysize, dtype=int)
- # 		list_of_arrays.append(created_array)
- # 	return list_of_arrays
- #print(create_n_random_arrays(5, 2))
+#print(create_n_random_arrays(5, 2))
 
 
 # # run my_bubble sort on n = 10 arrays of size 5 
