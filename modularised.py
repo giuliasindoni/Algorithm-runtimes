@@ -14,6 +14,8 @@ from merge_sort import merge_sort
 
 from quick_sort import quick_sort
 
+from sequential_search import sequential_search
+
 
 
 
@@ -80,6 +82,8 @@ list_of_averages_merge = collect_data(merge_sort, sizes)
 #list_of_average_selection = collect_data(selection_sort, sizes)
 
 #print(list_of_average_selection)
+
+
 
 
 #---------- Plotting the data and save img as png file
