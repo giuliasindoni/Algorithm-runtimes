@@ -40,9 +40,14 @@ def collect_search_data(algorithm, array_of_sizes):
 		list_of_averages_algorithm.append(attempt_average_size)
 	return list_of_averages_algorithm
 
+
+#-------- Some tests to collect on sequential search with arrays of sizes 5, 10, 50, 100, ...
+
 my_sizes = [5, 10, 50, 100, 500, 1000, 5000, 10000, 50000, 500000]
 
 list_of_averages_sequential = collect_search_data(sequential_search, my_sizes)
+
+#---------- Plotting the data 
 
 plt.xscale('log')
 plt.yscale('log')
