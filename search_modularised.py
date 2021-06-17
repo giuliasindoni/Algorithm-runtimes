@@ -79,17 +79,21 @@ def collect_search_data(algorithm, array_of_sizes):
 
 #-------- Some tests to collect on sequential search with arrays of sizes 5, 10, 50, 100, ...
 
-my_sizes = [5, 10, 50, 100, 500, 1000, 5000, 10000, 50000, 500000]
+my_sizes = [5, 10, 50, 100, 500, 1000, 5000, 10000, 50000, 100000 ,500000]
 
 list_of_averages_sequential = collect_search_data(sequential_search, my_sizes)
+
+list_of_averages_binary = collect_search_data(binary_search, my_sizes)
 
 #---------- Plotting the data 
 
 plt.xscale('log')
 plt.yscale('log')
 
-plt.plot(my_sizes, list_of_averages_sequential, 'ro-', label = 'sequential search')
+#plt.plot(my_sizes, list_of_averages_sequential, 'ro-', label = 'sequential search')
 
+
+plt.plot(my_sizes, list_of_averages_binary, 'ro-', label = 'binary search')
 
 #--------Plotting some functions to appreciate the bounds of the algorithms curves
 
@@ -101,11 +105,11 @@ m = [(1/10**7)*i*math.log(i,2) for i in x]
 
 k =  [ (1/10**7)* i for i in x]
 
-#plt.plot(x, y, 'g--', label = 'O(logn)')
+plt.plot(x, y, 'g--', label = 'O(logn)')
 
 plt.plot(x, k, 'b--', label = 'O(n)')
 
-plt.plot(x, m, 'g--', label = 'O(n*logn)')
+#plt.plot(x, m, 'g--', label = 'O(n*logn)')
 
 
 
@@ -122,7 +126,7 @@ plt.legend()
 
 #plt.savefig('merge-quick')
 
-plt.savefig('sequential-n*logn-n-comparison')
+plt.savefig('binary-logn-n-comparison')
 
 
 
