@@ -11,4 +11,6 @@ A = [9, 0, 2, 8, 10]
 
 K = 3
 
-print(sequential_search(A, K))
+
+
+#print(sequential_search(A, K))
