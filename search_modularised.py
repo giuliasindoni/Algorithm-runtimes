@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import math 
 from sequential_search import sequential_search
 from quick_sort import quick_sort
-
+from binary_search import binary_search
 
 #------- Function to create n random arrays of size mysize
 
@@ -25,7 +25,7 @@ def create_n_random_sorted_arrays(n, mysize):
   	for i in range(n):
   		created_array = numpy.random.randint(-500000, 500000, size=mysize, dtype=int)
   		created_sorted_array = quick_sort(created_array)
-  		list_of_arrays.append(created_sorted_array)
+  		list_of_sorted_arrays.append(created_sorted_array)
   	return list_of_sorted_arrays
 
 
@@ -38,10 +38,32 @@ def create_n_random_sorted_arrays(n, mysize):
 #-------- This will be our key. More experimentation could be done by choosing a key that 
 #-------- does not belong to the array.
 
+# def collect_search_data(algorithm, array_of_sizes):
+# 	list_of_averages_algorithm = []
+# 	for size in array_of_sizes:
+# 		lenght_size = create_n_random_arrays(10, size)
+# 		attempt = []
+# 		for array in lenght_size:
+# 			randomkey = random.choice(array)
+# 			start_time = time.time()
+# 			algorithm(array, randomkey)
+# 			end_time = time.time()
+# 			time_taken = end_time - start_time
+# 			attempt.append(time_taken)
+# 		attempt_average_size = sum(attempt) / len(attempt)
+# 		list_of_averages_algorithm.append(attempt_average_size)
+# 	return list_of_averages_algorithm
+
+
+
+
 def collect_search_data(algorithm, array_of_sizes):
 	list_of_averages_algorithm = []
 	for size in array_of_sizes:
-		lenght_size = create_n_random_arrays(10, size)
+		if algorithm == sequential_search:
+			lenght_size = create_n_random_arrays(10, size)
+		if algorithm == binary_search:
+			lenght_size = create_n_random_sorted_arrays(10, size)
 		attempt = []
 		for array in lenght_size:
 			randomkey = random.choice(array)
@@ -77,7 +99,7 @@ y = [(1/10**6)*math.log(i,2) for i in x]
 
 m = [(1/10**7)*i*math.log(i,2) for i in x]
 
-k =  [ (1/10**6)* i for i in x]
+k =  [ (1/10**7)* i for i in x]
 
 #plt.plot(x, y, 'g--', label = 'O(logn)')
 
