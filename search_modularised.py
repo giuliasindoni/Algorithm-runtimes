@@ -4,6 +4,7 @@ import time
 import matplotlib.pyplot as plt
 import math 
 from sequential_search import sequential_search
+from quick_sort import quick_sort
 
 
 #------- Function to create n random arrays of size mysize
@@ -14,6 +15,19 @@ def create_n_random_arrays(n, mysize):
   		created_array = numpy.random.randint(-500000, 500000, size=mysize, dtype=int)
   		list_of_arrays.append(created_array)
   	return list_of_arrays
+
+
+#---------- Function to create n random sorted arrays of size my size 
+#---------- Need to use this with binary search
+
+def create_n_random_sorted_arrays(n, mysize):
+  	list_of_sorted_arrays = []
+  	for i in range(n):
+  		created_array = numpy.random.randint(-500000, 500000, size=mysize, dtype=int)
+  		created_sorted_array = quick_sort(created_array)
+  		list_of_arrays.append(created_sorted_array)
+  	return list_of_sorted_arrays
+
 
 
 #-------- Function to collect average running times of search algorithms on arrays of sizes 5, 10, 50, 100... 
