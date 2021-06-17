@@ -1,5 +1,8 @@
 import math
-
+from quick_sort import quick_sort
+import numpy
+import time
+import matplotlib.pyplot as plt
 
 def binary_search(sortedarray, key):
 	left = 0
@@ -22,3 +25,4 @@ def binary_search(sortedarray, key):
 #mykey = 50
 
 #print(binary_search(x, mykey))
+
