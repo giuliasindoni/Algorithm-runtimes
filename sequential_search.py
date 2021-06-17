@@ -48,9 +48,48 @@ def collect_search_data(algorithm, array_of_sizes):
 		list_of_averages_algorithm.append(attempt_average_size)
 	return list_of_averages_algorithm
 
-my_sizes = [5, 10, 50, 100, 500, 1000, 5000, 10000, 50000]
+my_sizes = [5, 10, 50, 100, 500, 1000, 5000, 10000, 50000, 500000]
 
-print(collect_search_data(sequential_search, my_sizes))
+list_of_averages_sequential = collect_search_data(sequential_search, my_sizes)
+
+plt.xscale('log')
+plt.yscale('log')
+
+plt.plot(my_sizes, list_of_averages_sequential, 'ro-', label = 'sequential search')
+
+
+#--------Plotting some functions to appreciate the bounds of the algorithms curves
+
+x = range(5,500000)
+
+y = [(1/10**6)*math.log(i,2) for i in x]
+
+m = [(1/10**7)*i*math.log(i,2) for i in x]
+
+k =  [ (1/10**7)* i for i in x]
+
+#plt.plot(x, y, 'g--', label = 'O(logn)')
+
+plt.plot(x, k, 'b--', label = 'O(n)')
+
+plt.plot(x, m, 'g--', label = 'O(n*logn)')
+
+
+
+#------Create legend
+
+plt.legend(loc='upper left')
+plt.xlabel('Size of array')
+plt.ylabel('Average (seconds)')
+plt.legend()
+
+
+
+#------- Saving image as .png 
+
+#plt.savefig('merge-quick')
+
+plt.savefig('sequential-n*logn-n-comparison')
 
 
 
