@@ -6,6 +6,8 @@ import math
 from sequential_search import sequential_search
 
 
+#------- Function to create n random arrays of size mysize
+
 def create_n_random_arrays(n, mysize):
   	list_of_arrays = []
   	for i in range(n):
@@ -14,6 +16,13 @@ def create_n_random_arrays(n, mysize):
   	return list_of_arrays
 
 
+#-------- Function to collect average running times of search algorithms on arrays of sizes 5, 10, 50, 100... 
+#-------- Argument "algorithm" specify which algorithm we want to collect the data for
+#-------- Argument array_of_sizes is an array collecting the sizes we want the arrays argument of the algorithm to be
+#-------- We always create n = 10 arrays of each size, but this parameter could be changed.
+#-------- Besides creating n random arrays, we also generate a random number belonging to the array
+#-------- This will be our key. More experimentation could be done by choosing a key that 
+#-------- does not belong to the array.
 
 def collect_search_data(algorithm, array_of_sizes):
 	list_of_averages_algorithm = []
