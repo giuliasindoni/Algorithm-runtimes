@@ -93,7 +93,7 @@ plt.plot(sizes, list_of_averages_merge, 'r-', label = 'merge sort')
 #plt.plot(sizes, list_of_averages_quick, 'y-', label='quick sort')
 
 
-#--------__Plotting some functions to appreciate the bounds of the algorithms curves
+#--------Plotting some functions to appreciate the bounds of the algorithms curves
 
 x = range(5,500000)
 y = [(1/10**6)*i*math.log(i,2) for i in x]
@@ -113,7 +113,7 @@ plt.legend()
 
 
 
-#------- Saving image
+#------- Saving image as .png 
 
 #plt.savefig('merge-quick')
 
