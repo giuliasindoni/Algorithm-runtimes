@@ -55,7 +55,7 @@ def collect_data(algorithm, array_of_sizes):
 
 #-------- Some tests to collect on merge_sort, quick_sort ... with arrays of sizes 5, 10, 50, 100, ..., 5000
 
-sizes = [5,10, 50, 100, 500, 1000, 5000]
+sizes = [5,10, 50, 100, 500, 1000, 5000, 10000]
 
 
 list_of_averages_merge = collect_data(merge_sort, sizes)
@@ -68,7 +68,7 @@ list_of_averages_quick = collect_data(quick_sort, sizes)
 #print(list_of_average_quick)
 
 
-list_of_averages_bubble = collect_data(my_bubble_sort, sizes)
+#list_of_averages_bubble = collect_data(my_bubble_sort, sizes)
 
 #print(list_of_average_bubble)
 
@@ -91,18 +91,18 @@ list_of_averages_bubble = collect_data(my_bubble_sort, sizes)
 
 plt.xscale('log')
 plt.yscale('log')
-plt.plot(sizes, list_of_averages_bubble , 'bo-', label='bubble sort')
+#plt.plot(sizes, list_of_averages_bubble , 'bo-', label='bubble sort')
 plt.plot(sizes, list_of_averages_merge, 'ro-', label = 'merge sort')
 plt.plot(sizes, list_of_averages_quick, 'yo-', label='quick sort')
 
 
 #--------Plotting some functions to appreciate the bounds of the algorithms curves
 
-x = range(5,500000)
+x = range(5,10000)
 y = [(1/10**6)*i*math.log(i,2) for i in x]
 t = [(1/10**6)*i**2 for i in x]
 k =  [ (1/10**5)* i for i in x]
-#plt.plot(x, y, 'g--', label = 'O(n*logn)')
+plt.plot(x, y, 'g--', label = 'O(n*logn)')
 #plt.plot(x, k, 'b--', label = 'O(n)')
 #plt.plot(x, t)
 
@@ -120,7 +120,7 @@ plt.legend()
 
 #plt.savefig('merge-quick')
 
-plt.savefig('merge-quick-bubble-comparison')
+plt.savefig('merge-quick-nlogn')
 
 
 
